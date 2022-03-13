@@ -1,9 +1,9 @@
 // Copyright 2022 UNN-IASR
-#include "fun.h"
 #include <cctype>
 #include <vector>
 #include <cstring>
 #include <cmath>
+#include "fun.h"
 
 unsigned int faStr1(const char *str) {
     int i = 0;
@@ -24,7 +24,7 @@ unsigned int faStr1(const char *str) {
                 inWordIndicator = false;
             }
         }
-        i++;  
+        i++;
     }
     if (inWordIndicator) {
         if (!hasDigits)
@@ -81,7 +81,7 @@ unsigned int faStr3(const char *str) {
                 beginIndex = i;
             }
         } else {
-            if (inWordIndicator) {        
+            if (inWordIndicator) {     
                 wordCounter++;
                 inWordIndicator = false;
                 endIndex = i;
