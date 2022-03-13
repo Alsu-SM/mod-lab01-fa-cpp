@@ -1,4 +1,4 @@
-#include "fun.h"
+// Copyright 2022 UNN-IASR
 #include <cctype>
 #include <vector>
 #include <cstring>
@@ -30,7 +30,6 @@ unsigned int faStr1(const char *str) {
     }
     return wordCounter;
 }
-
 unsigned int faStr2(const char *str) {
 int i = 0;
     int wordCounter = 0;
