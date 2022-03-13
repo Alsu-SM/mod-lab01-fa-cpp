@@ -3,6 +3,8 @@
 #include <cctype>
 #include <vector>
 #include <cstring>
+#include <math.h>
+
 unsigned int faStr1(const char *str) {
     int i = 0;
     int wordCounter = 0;
