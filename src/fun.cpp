@@ -23,8 +23,8 @@ unsigned int faStr1(const char *str) {
                 hasDigits = false;
                 inWordIndicator = false;
             }
-        } 
-        i++;    
+        }
+        i++;  
     }
     if (inWordIndicator) {
         if (!hasDigits)
@@ -54,7 +54,6 @@ int i = 0;
                     }
                 }
             }
-            
         } else {
             if (inWordIndicator) {
                 if (goodWordIndicator)
@@ -82,7 +81,7 @@ unsigned int faStr3(const char *str) {
                 beginIndex = i;
             }
         } else {
-            if (inWordIndicator) {           
+            if (inWordIndicator) {        
                 wordCounter++;
                 inWordIndicator = false;
                 endIndex = i;
@@ -92,7 +91,7 @@ unsigned int faStr3(const char *str) {
             }
         }
         i++;
-    } 
+    }
     if (inWordIndicator) {
         wordCounter++;
         endIndex = strlen(str);
