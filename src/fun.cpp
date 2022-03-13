@@ -2,7 +2,7 @@
 #include "fun.h"
 #include <cctype>
 #include <vector>
-
+#include <cstring>
 unsigned int faStr1(const char *str) {
     int i = 0;
     int wordCounter = 0;
