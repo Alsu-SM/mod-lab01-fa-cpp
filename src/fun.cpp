@@ -6,8 +6,8 @@
 unsigned int faStr1(const char *str) {
     int i = 0;
     int wordCounter = 0;
-    int inWordIndicator = false;
-    int hasDigits = false;
+    bool inWordIndicator = false;
+    bool hasDigits = false;
     while (str[i] != '\0') {
         if (!isspace(str[i])) {
             inWordIndicator = true;
@@ -33,10 +33,8 @@ unsigned int faStr1(const char *str) {
 unsigned int faStr2(const char *str) {
 int i = 0;
     int wordCounter = 0;
-    int inWordIndicator = false;
-    int hasDigits = false;
-    int firstLetter = false;
-    int goodWordIndicator = false;
+    bool inWordIndicator = false;
+    bool goodWordIndicator = false;
     while (str[i] != '\0') {
         if (!isspace(str[i])) {
             if (!inWordIndicator) {
@@ -69,7 +67,6 @@ unsigned int faStr3(const char *str) {
     int i = 0;
     int wordCounter = 0;
     bool inWordIndicator = false;
-    bool hasDigits = false;
     int beginIndex = -1;
     int endIndex = -1;
     while (str[i] != '\0') {
