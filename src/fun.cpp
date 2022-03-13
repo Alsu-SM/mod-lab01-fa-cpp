@@ -1,10 +1,8 @@
-// Copyright 2022 UNN-IASR
+#include "fun.h"
 #include <cctype>
 #include <vector>
 #include <cstring>
 #include <cmath>
-#include "fun.h"
-
 unsigned int faStr1(const char *str) {
     int i = 0;
     int wordCounter = 0;
@@ -67,7 +65,8 @@ int i = 0;
     return wordCounter;
 }
 unsigned int faStr3(const char *str) {
-    std::vector <int> wordsLength;
+    using std::vector;
+    vector <int> wordsLength;
     int i = 0;
     int wordCounter = 0;
     bool inWordIndicator = false;
@@ -81,7 +80,7 @@ unsigned int faStr3(const char *str) {
                 beginIndex = i;
             }
         } else {
-            if (inWordIndicator) {     
+            if (inWordIndicator) {
                 wordCounter++;
                 inWordIndicator = false;
                 endIndex = i;
