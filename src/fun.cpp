@@ -3,26 +3,21 @@
 #include <cctype>
 #include <vector>
 #include <cstring>
-#include <math.h>
+#include <cmath>
 
 unsigned int faStr1(const char *str) {
     int i = 0;
     int wordCounter = 0;
     int inWordIndicator = false;
     int hasDigits = false;
-    while (str[i] != '\0')
-    {
-        if (!isspace(str[i]))
-        {
+    while (str[i] != '\0') {
+        if (!isspace(str[i])) {
             inWordIndicator = true;
-            if (isdigit(str[i]))
-            {
+            if (isdigit(str[i])) {
                 hasDigits = true;
             }
-        }
-        else {
-            if (inWordIndicator)
-            {
+        } else {
+            if (inWordIndicator) {
                 if (!hasDigits)
                     wordCounter++;
                 hasDigits = false;
@@ -31,8 +26,7 @@ unsigned int faStr1(const char *str) {
         } 
         i++;    
     }
-    if (inWordIndicator)
-    {
+    if (inWordIndicator) {
         if (!hasDigits)
             wordCounter++;
     }
@@ -46,32 +40,23 @@ int i = 0;
     int hasDigits = false;
     int firstLetter = false;
     int goodWordIndicator = false;
-    while (str[i] != '\0')
-    {
-        if (!isspace(str[i]))
-        {
-            if (!inWordIndicator)
-            {
-                if (isalpha(str[i]) && isupper(str[i]))
-                {
+    while (str[i] != '\0') {
+        if (!isspace(str[i])) {
+            if (!inWordIndicator) {
+                if (isalpha(str[i]) && isupper(str[i])) {
                     goodWordIndicator = true;
                 }
                 inWordIndicator = true;
-            }
-            else {
-                if (goodWordIndicator)
-                {
-                    if (!isalpha(str[i]))
-                    {
+            } else {
+                if (goodWordIndicator) {
+                    if (!isalpha(str[i])) {
                         goodWordIndicator = false;
                     }
                 }
             }
             
-        }
-        else {
-            if (inWordIndicator)
-            {
+        } else {
+            if (inWordIndicator) {
                 if (goodWordIndicator)
                     wordCounter++;
                 goodWordIndicator = false;
@@ -82,7 +67,6 @@ int i = 0;
     }
     return wordCounter;
 }
-
 unsigned int faStr3(const char *str) {
     std::vector <int> wordsLength;
     int i = 0;
@@ -91,19 +75,14 @@ unsigned int faStr3(const char *str) {
     bool hasDigits = false;
     int beginIndex = -1;
     int endIndex = -1;
-    while (str[i] != '\0')
-    {
-        if (!isspace(str[i]))
-        {
+    while (str[i] != '\0') {
+        if (!isspace(str[i])) {
             inWordIndicator = true;
-            if (beginIndex == -1)
-            {
+            if (beginIndex == -1) {
                 beginIndex = i;
             }
-        }
-        else {
-            if (inWordIndicator)
-            {           
+        } else {
+            if (inWordIndicator) {           
                 wordCounter++;
                 inWordIndicator = false;
                 endIndex = i;
@@ -113,15 +92,14 @@ unsigned int faStr3(const char *str) {
             }
         }
         i++;
-    } if (inWordIndicator)
-    {
+    } 
+    if (inWordIndicator) {
         wordCounter++;
         endIndex = strlen(str);
         wordsLength.push_back(endIndex - beginIndex);
     }
     double sum = 0;
-    for (int i = 0; i < wordsLength.size(); i++)
-    {
+    for (int i = 0; i < wordsLength.size(); i++) {
         sum += wordsLength[i];
     }
     sum = round(sum / wordsLength.size());
